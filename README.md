@@ -12,4 +12,6 @@ Script to compile SCCA classes from past results into proposed new class groupin
 ```
 .\nhscc.ps1 -in olddata.csv -out newdata.csv
 ```
-olddata.csv is the filename of the csv you saved from the Indexed Times list. newdata.csv is you desired output file name (Must not exist already)
+*olddata.csv is the filename of the csv you saved from the Indexed Times list. newdata.csv is you desired output file name (Must not exist already)*
+
+* Drivers that were unable to be matched with a grouping will be outputted to the console
