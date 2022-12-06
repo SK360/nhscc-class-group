@@ -1,4 +1,4 @@
-﻿<#
+<#
 .NOTES
    Created on: 2/7/22
    Created by: Matt Simmons (matt.simmons@gmail.com)
@@ -39,7 +39,7 @@ $results = import-csv $in
     Street1 = @("SS", "AS", "BS", "FS");
     Street2 = @("CS", "DS", "ES", "GS", "HS", "SSC");
     ST = @("STS", "STX", "STR", "STU", "STH");
-    Provisional = @("CAM-C", "CAM-T", "CAM-S", "XS-A", "XS-B", "EV");
+    Provisional = @("CAMC", "CAMT", "CAMS", "XSA", "XSB", "EV");
     Race1 = @("SSP", "ASP", "BSP", "CSP", "DSP", "ESP", "FSP", "SMF", "SM", "SSM", "SSR");
     Race2 = @("XP", "BP", "CP", "DP", "EP", "FP", "AM", "BM", "CM", "DM", "EM", "FM");
     Vintage = @("");
@@ -80,6 +80,6 @@ And then output to the csv file inputted in the out parameters. After each class
 #>
 
 foreach($class in $sortedclass){
-    $results | Where-Object -Property "New Class" -eq $class | select "New Class", "CarID", "Driver", "Car", "Index", "Indexed Time" | sort-object "Indexed Time" | Export-Csv -append -Force -NoTypeInformation -Path $out
+    $results | Where-Object -Property "New Class" -eq $class | select "New Class", "CarID", "Driver", "Car", "PAX Index", "PAX Time" | sort-object "PAX Time" | Export-Csv -append -Force -NoTypeInformation -Path $out
     Add-Content -Path $out -Value (',' * 6)
 }
